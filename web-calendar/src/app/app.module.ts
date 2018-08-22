@@ -5,18 +5,28 @@ import { FormsModule } from '@angular/forms';
 import { AppComponent } from './app.component';
 import { LoginComponent } from './login/login.component';
 import { AddEventComponent } from './add-event/add-event.component';
+import { routing } from './app.routing';
+import { CalendarComponent } from './calendar/calendar.component';
+import { AuthService } from './login/auth.service';
+import { EventService } from './add-event/event.service';
+import { RegisterComponent } from './register/register.component';
+import { EditComponent } from './edit/edit.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
-    AddEventComponent
+    AddEventComponent,
+    CalendarComponent,
+    RegisterComponent,
+    EditComponent
   ],
   imports: [
     BrowserModule,
-    FormsModule
+    FormsModule,
+    routing
   ],
-  providers: [],
+  providers: [AuthService, EventService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

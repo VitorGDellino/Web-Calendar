@@ -1,10 +1,10 @@
 <div class="container">
      <div class="card">
           <div class="card-header">
-               Add a new Event
+               Edit event
           </div>
           <div class="card-body">
-               <form #af="ngForm" (ngSubmit)="addEvent(af)">
+               <form #af="ngForm" (ngSubmit)="editEvent(af)">
                     <div class="form-group">
                          <input type="text" class="form-control" placeholder="Event's Name" name="title" [(ngModel)]="event.title" #title="ngModel" required>
                     </div>
@@ -39,7 +39,7 @@
                          <textarea class="form-control" rows="5" name="desc" [(ngModel)]="event.desc" #desc="ngModel"></textarea>
                     </div>
                     <div class="form-group">
-                         <button type="submit" class="btn btn-primary" [disabled]="af.invalid || lt(finishDate, startDate)">Add</button>
+                         <button type="submit" class="btn btn-primary" [disabled]="af.invalid || lt(finishDate, startDate)">Edit</button>
                     </div>
                </form>
           </div>

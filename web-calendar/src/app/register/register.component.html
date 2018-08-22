@@ -1,0 +1,48 @@
+<div class="container">
+     <div class="card">
+          <div class="card-header">
+               Sign-up
+          </div>
+          <div class="card-body">
+               <form #f="ngForm" (ngSubmit)="register(f)">
+                    <div class="form-group">
+                         <input type="text" class="form-control" name="name" placeholder="Name" [(ngModel)]="user.name" required #name="ngModel">
+                    </div>
+                    <div class="alert alert-danger" role="alert" *ngIf="name.invalid && name.touched">
+                         Insert a name.
+                    </div>
+                    <div class="form-group">
+                         <input type="text" class="form-control" name="last" placeholder="Last Name" [(ngModel)]="user.last" required #last="ngModel">
+                    </div>
+                    <div class="alert alert-danger" role="alert" *ngIf="last.invalid && last.touched">
+                         Insert a last name.
+                    </div>
+                    <div class="form-group">
+                         <input type="email" class="form-control" name="newemail" placeholder="Enter Email" [(ngModel)]="user.email" required email #newemail="ngModel">
+                    </div>
+                    <div class="alert alert-danger" role="alert" *ngIf="newemail.invalid && newemail.touched">
+                         Insert a valid email.
+                    </div>
+                    <div class="form-group">
+                         <input type="password" class="form-control" name="password" placeholder="Enter Password" [(ngModel)]="user.password" required #password="ngModel">
+                    </div>
+                    <div class="alert alert-danger" role="alert" *ngIf="password.invalid && password.touched">
+                         Insert the password.
+                    </div>
+                    <div class="form-group">
+                         <input type="password" class="form-control" name="confirmpassword" placeholder="Confirm Password" [(ngModel)]="user.confirmpassword" required #confirmpassword="ngModel">
+                    </div>
+                    <div class="alert alert-danger" role="alert" *ngIf="confirmpassword.invalid && confirmpassword.touched">
+                         Confirm the password.
+                    </div>
+                    <div class="alert alert-danger" role="alert" *ngIf="confirmpassword.valid && password.valid && password.value !== confirmpassword.value">
+                         The passwords must be equals.
+                    </div>
+
+                    <div class="form-group">
+                         <button type="submit" class="btn btn-primary" [disabled]="f.invalid || password.value !== confirmpassword.value">Register</button>
+                    </div>
+               </form>
+          </div>
+     </div>
+</div>

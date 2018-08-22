@@ -1,4 +1,9 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+
+import { EventService } from './event.service';
+import { Event } from './event';
+
 
 @Component({
   selector: 'app-add-event',
@@ -7,9 +12,25 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AddEventComponent implements OnInit {
 
-  constructor() { }
+     private event: Event = new Event();
 
-  ngOnInit() {
-  }
+     constructor(private eventservice: EventService, private router: Router) { }
+
+     ngOnInit() {
+     }
+
+     addEvent(form){
+          if(form.value.startDate > form.value.finishDate){
+               alert("Events does not travel to the past");
+          }else{
+               console.log("Added with successs");
+               this.router.navigate(['/calendar']);
+          }
+     }
+
+     lt(finishDate, startDate){
+          if(finishDate.value < startDate.value) return true;
+          else return false;
+     }
 
 }
