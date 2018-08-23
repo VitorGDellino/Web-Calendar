@@ -3,7 +3,7 @@
      <button (click)="logout()" class="btn btn-outline-light">Logout</button>
 </div>
 <div class="container">
-     <div *ngFor="let event of getEvents()" class="row row-striped">
+     <div *ngFor="let event of parseevent" class="row row-striped">
 		<div class="col-3 text-center">
 			<h1 class="display-4"><span class="badge badge-secondary">{{ event.dayduration }}</span></h1>
 			<h3>{{ event.monthduration }}</h3>
@@ -17,8 +17,7 @@
 			<p>{{ event.local }}</p>
 		</div>
           <div class="col-2 text-center">
-               <a routerLink="../add" class="btn btn-outline-success waves-effect mt-3 mb-3 mr-3">Edit</a>
-               <button class="btn btn btn-outline-danger waves-effect" (click)="deleteEvent()">Cancel</button>
+               <a routerLink="../edit/{{event.id}}" class="btn btn-outline-success waves-effect mt-3 mb-3 mr-3">Edit</a>
           </div>
 	</div>
      <div class="container">

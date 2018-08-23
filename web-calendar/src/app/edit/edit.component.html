@@ -42,6 +42,7 @@
                          <button type="submit" class="btn btn-primary" [disabled]="af.invalid || lt(finishDate, startDate)">Edit</button>
                     </div>
                </form>
+               <button type="submit" class="btn btn btn-outline-danger waves-effect" (click)="deleteEvent(this.id)">Cancel Event</button>
           </div>
      </div>
 </div>

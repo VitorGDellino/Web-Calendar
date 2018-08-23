@@ -1,4 +1,5 @@
 export class ParseEvent{
+     id : string;
      title: string;
      dayduration: string;
      monthduration: string;

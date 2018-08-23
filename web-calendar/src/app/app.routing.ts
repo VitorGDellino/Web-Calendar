@@ -10,7 +10,7 @@ import { EditComponent } from './edit/edit.component';
 const APP_ROUTES: Routes = [
      { path: '', component: LoginComponent },
      { path: 'calendar', component: CalendarComponent },
-     { path: 'edit/:title/:start/:finish/:desc/:local', component: EditComponent }
+     { path: 'edit/:id', component: EditComponent },
      { path: 'signup', component: RegisterComponent },
      { path: 'add', component: AddEventComponent }
 ];
