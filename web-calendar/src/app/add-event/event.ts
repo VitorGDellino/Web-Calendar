@@ -4,4 +4,5 @@ export class Event{
      startDate: string;
      finishDate: string;
      desc: string;
+     over: boolean;
 }

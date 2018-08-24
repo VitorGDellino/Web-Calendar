@@ -58,7 +58,7 @@ export class CalendarComponent implements OnInit {
                var parse = new ParseEvent();
                parse.id = this.events[i]._id;
                parse.title = this.events[i].title;
-               parse.desc = this.events[i].title;
+               parse.desc = this.events[i].desc;
                parse.local =  this.events[i].local;
 
                if(this.events[i].startDate.substring(8, 10) === this.events[i].finishDate.substring(8, 10)){
@@ -70,7 +70,7 @@ export class CalendarComponent implements OnInit {
                if(this.events[i].startDate.substring(5, 7) === this.events[i].finishDate.substring(5, 7)){
                     parse.monthduration = this.getMonth(this.events[i].finishDate.substring(5, 7));
                }else{
-                    parse.monthduration =  this.getMonth(this.events[i].startDate.substring(5, 7)) + " " + this.getMonth(this.events[i].finishDate.substring(5, 7));
+                    parse.monthduration =  this.getMonth(this.events[i].startDate.substring(5, 7)) + " - " + this.getMonth(this.events[i].finishDate.substring(5, 7));
                }
 
                parse.sh = this.events[i].startDate.substring(11, 16);
@@ -78,14 +78,11 @@ export class CalendarComponent implements OnInit {
 
                parse.startDate = this.events[i].startDate;
                parse.finishDate = this.events[i].finishDate;
+               parse.over = this.events[i].over;
 
                this.parseevent.push(parse);
 
           }
-     }
-
-     getEvents(){
-          return this.parseevent;
      }
 
      addEvent(){
@@ -104,7 +101,4 @@ export class CalendarComponent implements OnInit {
           );
 
      }
-
-
-
 }

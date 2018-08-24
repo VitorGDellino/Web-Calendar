@@ -9,4 +9,5 @@ export class ParseEvent{
      desc: string;
      startDate: string;
      finishDate: string;
+     over: boolean;
 }

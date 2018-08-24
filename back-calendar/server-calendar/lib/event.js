@@ -6,7 +6,8 @@ const eventSchema = new mongoose.Schema({
      desc : {type : String, default : ''},
      local : {type : String},
      startDate : {type : String},
-     finishDate : {type : String}
+     finishDate : {type : String},
+     over : {type : Number}
 });
 
 const Event = mongoose.model('events', eventSchema);
